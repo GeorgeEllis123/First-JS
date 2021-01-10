@@ -7,20 +7,24 @@ function myClick () {
   // Get the values that were input into the two text boxes.
   var fname = document.getElementById('fname').value;
   var lname = document.getElementById('lname').value;
+  var dog = document.getElementById("dog");
+  var cat = document.getElementById("cat");
+  var bird = document.getElementById("bird");
+  var hamster = document.getElementById("hamster");
 
   // By using = we *replace* the entire contents of the div tag.
   myDiv.innerHTML = "\n";
 
-  if (document.getElementById("dog").checked) {
+  if (dog.checked) {
     myDiv.innerHTML += "\t\t<img src='dog.jpg' />\n";
   }
-  if (document.getElementById("cat").checked) {
+  else if (cat.checked) {
     myDiv.innerHTML += "\t\t<img src='cat.jpg' />\n";
   }
-  if (document.getElementById("bird").checked) {
-    myDiv.innerHTML += "\t\t<img src='bird.jpeg' />\n";
+  else if (bird.checked) {
+    myDiv.innerHTML += "\t\t<img src='bird.jpg' />\n";
   }
-  if (document.getElementById("hamster").checked) {
+  else if (hamster.checked) {
     myDiv.innerHTML += "\t\t<img src='hamster.jpg' />\n";
   }
 
