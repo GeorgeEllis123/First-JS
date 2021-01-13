@@ -28,6 +28,15 @@ function myClick () {
     myDiv.innerHTML += "\t\t<img src='hamster.jpg' />\n";
   }
 
+  if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("lastname", lname);
+    // Retrieve
+    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+  }
+
   // Notice here that we are appending the values of the variables.
   myDiv.innerHTML += "\t\t<p>" + fname + " " + lname + "</p>\n";
 }
