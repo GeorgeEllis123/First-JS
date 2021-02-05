@@ -6,7 +6,7 @@
     <script defer src="myScript.js"></script>
     <style>
     #myDiv, button {
-      font-size: 150%;
+      font-size: 110%;
     }
     input {
       font-size: 125%;
@@ -14,29 +14,102 @@
     </style>
   </head>
   <body>
-    <div id="myDiv">
+    <div id="myDiv" style="line-height:90%">
       <p>
+        <h1>The Great Quiz</h3>
+        </br>
+
         <!-- Each label must be matched to an input -->
         <label for='fname'>First Name:</label>
         <!-- Good practice: give same name and id for every input -->
-        <input id='fname' name='fname' type='text' />
+        <input id='fname' name='fname' type='text' onmouseover='myMouseOver("fname")' onfocus='myMouseOver("fname")' onmouseout='myMouseOut("fname")' onfocusout='myMouseOut("fname")' />
         <br />
         <label for='lname'>Last Name:</label>
-        <input id='lname' name='lname' type='text' />
+        <input id='lname' name='lname' type='text' onmouseover='myMouseOver("lname")' onfocus='myMouseOver("lname")' onmouseout='myMouseOut("lname")' onfocusout='myMouseOut("lname")'/>
 
-        <h3>Favorite Pet</h3>
-
-        <input type="radio" id="dog" name="pet" value="dog">
+        <p><b>#1  </b><i>What is the most popular pet?</i></p>
+        <input type="radio" id="dog" name="question1" value="correct">
         <label for="dog">Dog</label><br />
-        <input type="radio" id="cat" name="pet" value="cat">
+        <input type="radio" id="cat" name="question1" value="incorrect">
         <label for="cat">Cat</label><br />
-        <input type="radio" id="bird" name="pet" value="bird">
+        <input type="radio" id="bird" name="question1" value="incorrect">
         <label for="bird">Bird</label><br />
-        <input type="radio" id="hamster" name="pet" value="hamster">
+        <input type="radio" id="hamster" name="question1" value="incorrect">
         <label for="hamster">Hamster</label><br />
 
+        <p><b>#2  </b><i>Who was the second president of the USA?</i></p>
+        <input type="radio" id="washington" name="question2" value="incorrect">
+        <label for="washington">George Washington</label><br />
+        <input type="radio" id="adams" name="question2" value="correct">
+        <label for="adams">John Atoms</label><br />
+        <input type="radio" id="lincoln" name="question2" value="incorrect">
+        <label for="lincoln">Abraham Lincoln</label><br />
+        <input type="radio" id="madison" name="question2" value="incorrect">
+        <label for="madison">James Madison</label><br />
+        <input type="radio" id="na" name="question2" value="incorrect">
+        <label for="na">None of the Above</label><br />
+
+        <p><b>#3  </b><i>Select all that are true:</i></p>
+        <input type="checkbox" id="whale" name="question3" value="correct">The blue whale is the biggest animal.<br>
+        <input type="checkbox" id="poodle" name="question3" value="incorrect">The poodle is the smallest dog breed.<br>
+        <input type="checkbox" id="cats" name="question3" value="correct">Cats sleep 16 to 18 hours per day.<br>
+        <input type="checkbox" id="karoke" name="question3" value="correct">Karoke means "empty orchestra" in Japanese.<br>
+
+        <p><b>#4  </b><i>True or False: The empire state building is the tallest building in New York.</i></p>
+        <input type="radio" id="true1" name="question4" value="incorrect">
+        <label for="true1">True</label><br />
+        <input type="radio" id="false1" name="question4" value="correct">
+        <label for="false1">False</label><br />
+
+        <p><b>#5  </b><i>What is the name of the main currency in Mexico?</i></p>
+        <input id='peso' name='question5' type='text' onmouseover='myMouseOver("peso")' onfocus='myMouseOver("peso")' onmouseout='myMouseOut("peso")' onfocusout='myMouseOut("peso")' />
+
+        <p><b>#6  </b><i>How many human body parts are only three letters long?</i></p>
+        <input type="radio" id="5" name="question6" value="incorrect">
+        <label for="5">5</label><br />
+        <input type="radio" id="6" name="question6" value="incorrect">
+        <label for="6">6</label><br />
+        <input type="radio" id="10" name="question6" value="correct">
+        <label for="10">10</label><br />
+        <input type="radio" id="13" name="question6" value="incorrect">
+        <label for="13">13</label><br />
+
+        <p><b>#7  </b><i>True or False: All mammals can jump.</i></p>
+        <input type="radio" id="true2" name="question7" value="incorrect">
+        <label for="true2">True</label><br />
+        <input type="radio" id="false2" name="question7" value="correct">
+        <label for="false2">False</label><br />
+
+        <p><b>#8  </b><i>When was diet coke invented?</i></p>
+        <input type="radio" id="1967" name="question8" value="incorrect">
+        <label for="1982">1982</label><br />
+        <input type="radio" id="1969" name="question8" value="incorrect">
+        <label for="1969">1969</label><br />
+        <input type="radio" id="1982" name="question8" value="correct">
+        <label for="1982">1982</label><br />
+        <input type="radio" id="1999" name="question8" value="incorrect">
+        <label for="1999">1999</label><br />
+
+        <p><b>#9  </b><i>What was the Disney movie made in color?</i></p>
+        <input type="radio" id="Snow White" name="question9" value="correct">
+        <label for="Snow White">Snow White</label><br />
+        <input type="radio" id="Cinderella" name="question9" value="incorrect">
+        <label for="Cinderella">Cinderella</label><br />
+        <input type="radio" id="Pinocchio" name="question9" value="incorrect">
+        <label for="Pinocchio">Pinocchio</label><br />
+        <input type="radio" id="Dumbo" name="question9" value="incorrect">
+        <label for="Dumbo">Dumbo</label><br />
+
+        <p><b>#10 </b><i>Select all that apply: Which of these birds can fly?</i></p>
+        <input type="checkbox" id="emu" name="question10" value="correct">Emu<br>
+        <input type="checkbox" id="kiwi" name="question10" value="correct">Kiwi<br>
+        <input type="checkbox" id="pigeon" name="question10" value="incorrect">Pigeon<br>
+        <input type="checkbox" id="ostrich" name="question10" value="correct">Ostrich<br>
+
+
+
       </p>
-      <button onclick='myClick()'>I'm a button, click me!</button>
+      <button id="myButton" onclick='myClick()' onmouseover='myMouseOver("myButton")' onmouseout='myMouseOut("myButton")'>Submit</button>
     </div>
 
     <div id="result"></div>
