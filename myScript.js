@@ -191,7 +191,7 @@ function myClick() {
     myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 10</b></p>\n';
   }
   else {
-    myDiv.innerHTML += '\t\t<p style="color:red"><<b>Question 10:</b></p>\n';
+    myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 10:</b></p>\n';
     myDiv.innerHTML += '\t\t<p style="color:green"><i>Correct Answer:</i> Emu, Kiwi, and Ostrich</p>\n';
   }
 
@@ -202,6 +202,24 @@ function myClick() {
 
   localStorage.setItem("data", JSON.stringify(myJSON));
   console.log(localStorage);
+
+  myDiv.innerHTML += '\t\t<br>';
+  myDiv.innerHTML += '\t\t<h2 style="color:blue">Last User Data</h2>\n';
+  myDiv.innerHTML += '\t\t<h4>Name: <i>' + oldJSON['fname'] + ' ' + oldJSON['lname'] + ' </i><p>\n';
+  myDiv.innerHTML += '\t\t<p style="color:orange"><u>Did they get it correct? <u><p>\n';
+  myDiv.innerHTML += '\t\t<p>Question 1: ' + oldJSON['q1'] + '<p>\n';
+  myDiv.innerHTML += '\t\t<p>Question 2: ' + oldJSON['q2'] + '<p>\n';
+  myDiv.innerHTML += '\t\t<p>Question 3: ' + oldJSON['q3'] + '<p>\n';
+  myDiv.innerHTML += '\t\t<p>Question 4: ' + oldJSON['q4'] + '<p>\n';
+  myDiv.innerHTML += '\t\t<p>Question 5: ' + oldJSON['q5'] + '<p>\n';
+  myDiv.innerHTML += '\t\t<p>Question 6: ' + oldJSON['q6'] + '<p>\n';
+  myDiv.innerHTML += '\t\t<p>Question 7: ' + oldJSON['q7'] + '<p>\n';
+  myDiv.innerHTML += '\t\t<p>Question 8: ' + oldJSON['q8'] + '<p>\n';
+  myDiv.innerHTML += '\t\t<p>Question 9: ' + oldJSON['q9'] + '<p>\n';
+  myDiv.innerHTML += '\t\t<p>Question 10: ' + oldJSON['q10']+ '<p>\n';
+  myDiv.innerHTML += '\t\t<p>Score: ' + oldJSON['score']+ '/10 <p>\n';
+
+
 }
 
 function myMouseOver(id) {
