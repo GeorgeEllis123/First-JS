@@ -1,7 +1,6 @@
 // Just check to see that we found the div element we are looking for
 myDiv = document.getElementById("myDiv");
 console.log(myDiv);
-console.log("hello");
 
 function myClick() {
   // Get the values that were input into the two text boxes.
@@ -40,9 +39,10 @@ function myClick() {
     "q8": q8,
     "q9": q9,
     "q10": '',
-    "score": '',
+    "score": 0,
   }
 
+  // Calculates the more complex results for the quiz
   if (q3b == false) {
     if (q3a == true && q3c == true && q3d == true){
       myJSON['q3'] = true;
@@ -53,6 +53,13 @@ function myClick() {
   }
   else {
     myJSON['q3'] = false;
+  }
+
+  if (q5 == "peso") {
+    myJSON['q5'] = true;
+  }
+  else {
+    myJSON['q5'] = false;
   }
 
   if (q10c == false) {
@@ -67,11 +74,43 @@ function myClick() {
     myJSON['q10'] = false;
   }
 
+  // Calculates the total score
+  if (myJSON['q1']) {
+    myJSON['score'] += 1;
+  }
+  if (myJSON['q2']) {
+    myJSON['score'] += 1;
+  }
+  if (myJSON['q3']) {
+    myJSON['score'] += 1;
+  }
+  if (myJSON['q4']) {
+    myJSON['score'] += 1;
+  }
+  if (myJSON['q5']) {
+    myJSON['score'] += 1;
+  }
+  if (myJSON['q6']) {
+    myJSON['score'] += 1;
+  }
+  if (myJSON['q7']) {
+    myJSON['score'] += 1;
+  }
+  if (myJSON['q8']) {
+    myJSON['score'] += 1;
+  }
+  if (myJSON['q9']) {
+    myJSON['score'] += 1;
+  }
+  if (myJSON['q10']) {
+    myJSON['score'] += 1;
+  }
+
   // By using = we *replace* the entire contents of the div tag.
   myDiv.innerHTML = "\n";
 
   // Notice here that we are appending the values of the variables.
-  myDiv.innerHTML += "\t\t<p>" + myJSON['fname'] + " " + myJSON['lname'] + "'s favorite pet is: " + myJSON['favorite'] + "</p>\n";
+  myDiv.innerHTML += "\t\t<p>" + myJSON['fname'] + " " + myJSON['lname'] + "'s Score: " + myJSON['score'] + "/10 \n";
 
   oldJSON = JSON.parse(localStorage.getItem("data"));
   console.log(oldJSON);
