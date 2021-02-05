@@ -113,18 +113,16 @@ function myClick() {
   myDiv.innerHTML += '\t\t<h2 style="color:blue">Your Score: ' + myJSON['score'] + '/10</h2>\n';
   myDiv.innerHTML += '\t\t<h3 style="color:orange"><u>Answer Key:</u></h3>\n';
 
-  // Shows the correct answers for all of the ones you got wrong
-
+  // Shows the correct answers for all of the ones the user got wrong
   if (myJSON['q1']) {
-    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 1</b></p>\n';
+    myDiv.innerHTML += '\t\t<div class="dropdown"><button style="color:green">Question 1</button></div>\n';
   }
   else {
-    myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 1:</b></p>\n';
-    myDiv.innerHTML += '\t\t<p style="color:green"><i>Correct Answer:</i> Dog</p>\n';
+    myDiv.innerHTML += '\t\t<div class="dropdown"><button onclick="dropDown()" class="dropbtn" style="color:red">Question 1</button><div id="myDropdown" class="dropdown-content"><a style="color:green">Dog</a></div></div>\n';
   }
 
   if (myJSON['q2']) {
-    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 2</b></p>\n';
+    myDiv.innerHTML += '\t\t<div class="dropdown"><button style="color:green">Question 2</button></div>\n';
   }
   else {
     myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 2:</b></p>\n';
@@ -132,7 +130,7 @@ function myClick() {
   }
 
   if (myJSON['q3']) {
-    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 3</b></p>\n';
+    myDiv.innerHTML += '\t\t<div class="dropdown"><button style="color:green">Question 3</button></div>\n';
   }
   else {
     myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 3:</b></i></p>\n';
@@ -140,7 +138,7 @@ function myClick() {
   }
 
   if (myJSON['q4']) {
-    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 4</b></p>\n';
+    myDiv.innerHTML += '\t\t<div class="dropdown"><button style="color:green">Question 4</button></div>\n';
   }
   else {
     myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 4:</b></p>\n';
@@ -148,7 +146,7 @@ function myClick() {
   }
 
   if (myJSON['q5']) {
-    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 5</b></p>\n';
+    myDiv.innerHTML += '\t\t<div class="dropdown"><button style="color:green">Question 5</button></div>\n';
   }
   else {
     myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 5:</b></p>\n';
@@ -156,7 +154,7 @@ function myClick() {
   }
 
   if (myJSON['q6']) {
-    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 6</b></p>\n';
+    myDiv.innerHTML += '\t\t<div class="dropdown"><button style="color:green">Question 6</button></div>\n';
   }
   else {
     myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 6:</b></p>\n';
@@ -164,7 +162,7 @@ function myClick() {
   }
 
   if (myJSON['q7']) {
-    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 7</b></p>\n';
+    myDiv.innerHTML += '\t\t<div class="dropdown"><button style="color:green">Question 7</button></div>\n';
   }
   else {
     myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 7:</b></p>\n';
@@ -172,7 +170,7 @@ function myClick() {
   }
 
   if (myJSON['q8']) {
-    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 8</b></p>\n';
+    myDiv.innerHTML += '\t\t<div class="dropdown"><button style="color:green">Question 8</button></div>\n';
   }
   else {
     myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 8:</b></p>\n';
@@ -180,7 +178,7 @@ function myClick() {
   }
 
   if (myJSON['q9']) {
-    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 9</b></p>\n';
+    myDiv.innerHTML += '\t\t<div class="dropdown"><button style="color:green">Question 9</button></div>\n';
   }
   else {
     myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 9:</b></p>\n';
@@ -188,7 +186,7 @@ function myClick() {
   }
 
   if (myJSON['q10']) {
-    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 10</b></p>\n';
+    myDiv.innerHTML += '\t\t<div class="dropdown"><button style="color:green">Question 10</button></div>\n';
   }
   else {
     myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 10:</b></p>\n';
@@ -196,13 +194,15 @@ function myClick() {
   }
 
 
-
+  //Retrieves the last user's data
   oldJSON = JSON.parse(localStorage.getItem("data"));
   console.log(oldJSON);
 
+  // Stores the user's data
   localStorage.setItem("data", JSON.stringify(myJSON));
   console.log(localStorage);
 
+  // Displays the data for the last user
   myDiv.innerHTML += '\t\t<br>';
   myDiv.innerHTML += '\t\t<h2 style="color:blue">Last User Data</h2>\n';
   myDiv.innerHTML += '\t\t<h4>Name: <i>' + oldJSON['fname'] + ' ' + oldJSON['lname'] + ' </i><p>\n';
@@ -220,6 +220,24 @@ function myClick() {
   myDiv.innerHTML += '\t\t<p>Score: ' + oldJSON['score']+ '/10 <p>\n';
 
 
+}
+
+function dropDown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
 }
 
 function myMouseOver(id) {
