@@ -110,7 +110,92 @@ function myClick() {
   myDiv.innerHTML = "\n";
 
   // Notice here that we are appending the values of the variables.
-  myDiv.innerHTML += "\t\t<p>" + myJSON['fname'] + " " + myJSON['lname'] + "'s Score: " + myJSON['score'] + "/10 \n";
+  myDiv.innerHTML += '\t\t<h2 style="color:blue">Your Score: ' + myJSON['score'] + '/10</h2>\n';
+  myDiv.innerHTML += '\t\t<h3 style="color:orange"><u>Answer Key:</u></h3>\n';
+
+  // Shows the correct answers for all of the ones you got wrong
+
+  if (myJSON['q1']) {
+    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 1</b></p>\n';
+  }
+  else {
+    myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 1:</b></p>\n';
+    myDiv.innerHTML += '\t\t<p style="color:green"><i>Correct Answer:</i> Dog</p>\n';
+  }
+
+  if (myJSON['q2']) {
+    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 2</b></p>\n';
+  }
+  else {
+    myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 2:</b></p>\n';
+    myDiv.innerHTML += '\t\t<p style="color:green"><i>Correct Answer:</i> John Adams</p>\n';
+  }
+
+  if (myJSON['q3']) {
+    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 3</b></p>\n';
+  }
+  else {
+    myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 3:</b></i></p>\n';
+    myDiv.innerHTML += '\t\t<p style="color:green"><i>Correct Answer:</i> First, Third, and Fourth</p>\n';
+  }
+
+  if (myJSON['q4']) {
+    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 4</b></p>\n';
+  }
+  else {
+    myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 4:</b></p>\n';
+    myDiv.innerHTML += '\t\t<p style="color:green"><i>Correct Answer:</i> False</p>\n';
+  }
+
+  if (myJSON['q5']) {
+    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 5</b></p>\n';
+  }
+  else {
+    myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 5:</b></p>\n';
+    myDiv.innerHTML += '\t\t<p style="color:green"><i>Correct Answer:</i> peso</p>\n';
+  }
+
+  if (myJSON['q6']) {
+    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 6</b></p>\n';
+  }
+  else {
+    myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 6:</b></p>\n';
+    myDiv.innerHTML += '\t\t<p style="color:green"><i>Correct Answer:</i> 10</p>\n';
+  }
+
+  if (myJSON['q7']) {
+    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 7</b></p>\n';
+  }
+  else {
+    myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 7:</b></p>\n';
+    myDiv.innerHTML += '\t\t<p style="color:green"><i>Correct Answer:</i> False</p>\n';
+  }
+
+  if (myJSON['q8']) {
+    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 8</b></p>\n';
+  }
+  else {
+    myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 8:</b></p>\n';
+    myDiv.innerHTML += '\t\t<p style="color:green"><i>Correct Answer:</i> 1982</p>\n';
+  }
+
+  if (myJSON['q9']) {
+    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 9</b></p>\n';
+  }
+  else {
+    myDiv.innerHTML += '\t\t<p style="color:red"><b>Question 9:</b></p>\n';
+    myDiv.innerHTML += '\t\t<p style="color:green"><i>Correct Answer:</i> Snow White</p>\n';
+  }
+
+  if (myJSON['q10']) {
+    myDiv.innerHTML += '\t\t<p style="color:green"><b>Question 10</b></p>\n';
+  }
+  else {
+    myDiv.innerHTML += '\t\t<p style="color:red"><<b>Question 10:</b></p>\n';
+    myDiv.innerHTML += '\t\t<p style="color:green"><i>Correct Answer:</i> Emu, Kiwi, and Ostrich</p>\n';
+  }
+
+
 
   oldJSON = JSON.parse(localStorage.getItem("data"));
   console.log(oldJSON);
